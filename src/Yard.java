@@ -18,10 +18,10 @@ public class Yard extends Quantity {
     public double toFeet()  { return quantity*conversionFactorForFeet;  }*/
     public double toCentimeter()  { return quantity*conversionFactorForCentimeter;  }
     public Quantity toMe(double quantity){ return new Yard(quantity/conversionFactorForCentimeter);}
-
+    public Quantity toAdd(double quantity1,double quantity2){return toMe(quantity1+quantity2);}
     @Override
     public String toString() {
-        return "to Yard{" +
+        return "In Yard{" +
                 "quantity=" + quantity +
                 '}';
     }

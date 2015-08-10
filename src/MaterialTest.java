@@ -26,7 +26,7 @@ public class MaterialTest {
         Quantity quantity= new Meter(1);
         Quantity quantity1= new Inch();
         quantity1=Material.convertMaterial(quantity,quantity1);
-        Assert.assertEquals(Material.convertMaterial(quantity, new Inch()),quantity1);
+        Assert.assertEquals(Material.convertMaterial(quantity, new Inch()), quantity1);
     }
 
     @Test
@@ -50,6 +50,24 @@ public class MaterialTest {
         Quantity quantity1= new Meter();
         quantity1=Material.convertMaterial(quantity,quantity1);
         Assert.assertEquals(Material.convertMaterial(quantity, new Meter()), quantity1);
+    }
+
+    @Test
+    public void addMeterToCentimeter() throws  Exception{
+        Quantity quantity = new Meter(2);
+        Quantity quantity1 = new Centimeter(100);
+        Quantity result = Material.addMaterial(quantity,quantity1);
+        Assert.assertEquals(Material.addMaterial(quantity,quantity1),result);
+        System.out.println(result); //just to see whether result is correct
+    }
+
+    @Test
+    public void addYardToInch() throws  Exception{
+        Quantity quantity = new Yard(2);
+        Quantity quantity1 = new Inch(10);
+        Quantity result = Material.addMaterial(quantity,quantity1);
+        Assert.assertEquals(Material.addMaterial(quantity,quantity1),result);
+        System.out.println(result); //just to see whether result is correct
     }
 
 }

@@ -5,6 +5,7 @@ public class Material {
 
 
     public static boolean isMaterialEqual(Quantity q1,Quantity q2){ return Quantity.isQuantityEqual(q1,q2);}
-    public static Quantity convertMaterial(Quantity q1,Quantity q2){return  Quantity.convertQuantity(q1,q2);}
+    public static Quantity convertMaterial(Quantity q1,Quantity q2){return  Quantity.convertQuantity(q1, q2);}
+    public static Quantity addMaterial(Quantity q1,Quantity q2){return  Quantity.addQuantity(q1,q2);}
     }
 
