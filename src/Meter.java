@@ -1,7 +1,7 @@
 /**
  * Created by Suchitra on 10-08-2015.
  */
-public class Meter {
+public class Meter extends Quantity {
   private double quantity;
     final private static double conversionFactorForCentimeter=100;
 
@@ -13,9 +13,6 @@ public class Meter {
         this.quantity = quantity;
     }
 
-    public Centimeter toCentimeter()
-    {
-        return new Centimeter()
-    }
+    public double toCentimeter() { return quantity*conversionFactorForCentimeter;  }
 }
 

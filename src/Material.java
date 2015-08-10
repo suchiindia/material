@@ -4,16 +4,6 @@
 public class Material {
 
 
-    public static double meterToCentimeter(Meter materialInMeter)
-    {
-        return materialInMeter.getQuantity()*Meter.getConversionFactorForCentimeter();
-    }
-    public static double centimeterToMeter(Centimeter materialInCentimeter)
-    {
-        return materialInCentimeter.getQuantity()/Centimeter.getConversionFactorForMeter();
-    }
 
-    public static boolean isMaterialEqual(Meter materialInMeter,Centimeter materialInCentimeter){
-        return meterToCentimeter(materialInMeter)==materialInCentimeter.getQuantity();
-    }
+    public static boolean isMaterialEqual(Quantity q1,Quantity q2){ return Quantity.isQuantityEqual(q1,q2);}
 }

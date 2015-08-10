@@ -1,19 +1,14 @@
 /**
  * Created by Suchitra on 10-08-2015.
  */
-public class Centimeter {
+public class Centimeter extends Quantity {
     private double quantity;
-    final private static double conversionFactorForMeter=100;
+    final private static double conversionFactorForCentimeter=1;
 
-    public double getQuantity() {
-        return quantity;
-    }
+    public double getQuantity() { return quantity; }
 
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
-    }
 
-    public static double getConversionFactorForMeter() {
-        return conversionFactorForMeter;
-    }
+    public Centimeter(double quantity) { this.quantity = quantity; }
+
+    public double toCentimeter()  { return quantity*conversionFactorForCentimeter;  }
 }
