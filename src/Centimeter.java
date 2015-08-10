@@ -13,7 +13,7 @@ public class Centimeter extends Quantity {
 
     public double toCentimeter()  { return quantity*conversionFactorForCentimeter;  }
     public Quantity toMe(double quantity){return new Centimeter(quantity/conversionFactorForCentimeter);}
-    public Quantity toAdd(double quantity1,double quantity2){return toMe(quantity1+quantity2);}
+    public Quantity addQuantity(Quantity quantity2){return toMe(this.toCentimeter() + quantity2.toCentimeter());}
 
     @Override
     public String toString() {

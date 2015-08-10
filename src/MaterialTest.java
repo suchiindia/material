@@ -56,8 +56,8 @@ public class MaterialTest {
     public void addMeterToCentimeter() throws  Exception{
         Quantity quantity = new Meter(2);
         Quantity quantity1 = new Centimeter(100);
-        Quantity result = Material.addMaterial(quantity,quantity1);
-        Assert.assertEquals(Material.addMaterial(quantity,quantity1),result);
+        Quantity result = Material.addMaterial(quantity1,quantity);
+        Assert.assertEquals(Material.addMaterial(quantity1,quantity),result);
         System.out.println(result); //just to see whether result is correct
     }
 
@@ -65,8 +65,8 @@ public class MaterialTest {
     public void addYardToInch() throws  Exception{
         Quantity quantity = new Yard(2);
         Quantity quantity1 = new Inch(10);
-        Quantity result = Material.addMaterial(quantity,quantity1);
-        Assert.assertEquals(Material.addMaterial(quantity,quantity1),result);
+        Quantity result = Material.addMaterial(quantity1,quantity);
+        Assert.assertEquals(Material.addMaterial(quantity1,quantity),result);
         System.out.println(result); //just to see whether result is correct
     }
 
