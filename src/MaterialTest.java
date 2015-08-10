@@ -10,14 +10,38 @@ public class MaterialTest {
 
     @Test
     public void testIsMaterialEqual() throws Exception {
-    Meter materialInMeter = new Meter(10);
-        Centimeter materialInCentimeter = new Centimeter(1000);
-        Assert.assertTrue(Material.isMaterialEqual(materialInMeter, materialInCentimeter));
+    Quantity q1 = new Meter(10);
+       Quantity q2 = new Centimeter(1000);
+        Assert.assertTrue(Material.isMaterialEqual(q1, q2));
     }
     @Test
     public void testIsMaterialNotEqual() throws Exception {
-        Meter materialInMeter = new Meter(10);
-        Centimeter materialInCentimeter = new Centimeter(1000);
-        Assert.assertFalse(Material.isMaterialEqual(materialInMeter, materialInCentimeter));
+        Quantity q1 = new Meter(10);
+        Quantity q2 = new Centimeter(1000);
+        Assert.assertFalse(Material.isMaterialEqual(q1, q2));
     }
+
+    @Test
+    public void convertToInch() throws Exception{
+        Quantity quantity= new Meter(1);
+        System.out.println(Material.convertMaterial(quantity, new Inch()));
+    }
+
+    @Test
+    public void convertToFeet() throws Exception{
+        Quantity quantity= new Meter(1);
+        System.out.println(Material.convertMaterial(quantity,new Feet()));
+    }
+    @Test
+    public void convertToYard() throws Exception{
+        Quantity quantity= new Meter(1);
+        System.out.println(Material.convertMaterial(quantity,new Yard()));
+    }
+
+    @Test
+    public void convertToMeter() throws Exception{
+        Quantity quantity= new Meter(1);
+        System.out.println(Material.convertMaterial(quantity,new Meter()));
+    }
+
 }
