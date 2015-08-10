@@ -24,24 +24,32 @@ public class MaterialTest {
     @Test
     public void convertToInch() throws Exception{
         Quantity quantity= new Meter(1);
-        System.out.println(Material.convertMaterial(quantity, new Inch()));
+        Quantity quantity1= new Inch();
+        quantity1=Material.convertMaterial(quantity,quantity1);
+        Assert.assertEquals(Material.convertMaterial(quantity, new Inch()),quantity1);
     }
 
     @Test
     public void convertToFeet() throws Exception{
         Quantity quantity= new Meter(1);
-        System.out.println(Material.convertMaterial(quantity,new Feet()));
+        Quantity quantity1= new Feet();
+        quantity1=Material.convertMaterial(quantity,quantity1);
+        Assert.assertEquals(Material.convertMaterial(quantity, new Feet()), quantity1);
     }
     @Test
     public void convertToYard() throws Exception{
         Quantity quantity= new Meter(1);
-        System.out.println(Material.convertMaterial(quantity,new Yard()));
+        Quantity quantity1= new Yard();
+        quantity1=Material.convertMaterial(quantity,quantity1);
+        Assert.assertEquals(Material.convertMaterial(quantity, new Yard()), quantity1);
     }
 
     @Test
     public void convertToMeter() throws Exception{
         Quantity quantity= new Meter(1);
-        System.out.println(Material.convertMaterial(quantity,new Meter()));
+        Quantity quantity1= new Meter();
+        quantity1=Material.convertMaterial(quantity,quantity1);
+        Assert.assertEquals(Material.convertMaterial(quantity, new Meter()), quantity1);
     }
 
 }

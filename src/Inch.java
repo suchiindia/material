@@ -26,4 +26,21 @@ public class Inch extends Quantity {
                 "quantity=" + quantity +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Inch)) return false;
+
+        Inch inch = (Inch) o;
+
+        return Double.compare(inch.quantity, quantity) == 0;
+
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(quantity);
+        return (int) (temp ^ (temp >>> 32));
+    }
 }

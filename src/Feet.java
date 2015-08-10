@@ -24,4 +24,21 @@ public class Feet extends Quantity {
                 "quantity=" + quantity +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Feet)) return false;
+
+        Feet feet = (Feet) o;
+
+        return Double.compare(feet.quantity, quantity) == 0;
+
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(quantity);
+        return (int) (temp ^ (temp >>> 32));
+    }
 }

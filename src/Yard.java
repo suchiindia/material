@@ -25,4 +25,21 @@ public class Yard extends Quantity {
                 "quantity=" + quantity +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Yard)) return false;
+
+        Yard yard = (Yard) o;
+
+        return Double.compare(yard.quantity, quantity) == 0;
+
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(quantity);
+        return (int) (temp ^ (temp >>> 32));
+    }
 }

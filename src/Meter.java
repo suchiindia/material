@@ -23,5 +23,22 @@ public class Meter extends Quantity {
                 "quantity=" + quantity +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Meter)) return false;
+
+        Meter meter = (Meter) o;
+
+        return Double.compare(meter.quantity, quantity) == 0;
+
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(quantity);
+        return (int) (temp ^ (temp >>> 32));
+    }
 }
 
